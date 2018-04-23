@@ -10,19 +10,19 @@ from datetime import datetime
 import sys,os
 from dateutil import parser
 import redis
-rediscache = redis.StrictRedis(host='shilpiCache.redis.cache.windows.net',
-      port=6380, db=0, password='OphKwF1FBFCIC3jc73m0+d7XzhP66niw8WYmjRViuIo=', ssl=True, charset="utf-8",  decode_responses=True)
+rediscache = redis.StrictRedis(host='.redis.cache.windows.net',
+      port=, db=0, password='', ssl=True, charset="utf-8",  decode_responses=True)
 
 for key in rediscache.keys():
    print(key)
-  #rediscache.delete(key)
+  
 
 headers=[]
-#hostname = 'shilpiprojectserver.database.windows.net'
-username = 'Shilpi@shilpidb1'
-password = 'Shi$12345'
-database = 'Project2'
-myConn = pymysql.connect(host='shilpidb1.mysql.database.azure.com', user=username, passwd=password,db=database,local_infile=True)
+
+username = ''
+password = ''
+database = ''
+myConn = pymysql.connect(host='X.azure.com', user=username, passwd=password,db=database,local_infile=True)
 
 app = Flask(__name__)
 
@@ -202,8 +202,6 @@ def innerjoin():
 
 
 # query
-# SELECT * FROM testdb.earthquake where mag between 3 and 6 and place like '%CA' collate utf8_bin;
-# update my_table set path = replace(path, 'oldstring', 'newstring')
 #select * from citydata where magType = 'ml' and mag >= '1.0' Limit 4000
 
 
