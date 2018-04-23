@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 style="text-align: center">Shilpi Mittal</h1>
+    <h1 style="text-align: center">1001373752</h1>
+    <br>
+<form action="/createtable" method="post" enctype="multipart/form-data">
+        <strong>Create the table</strong>
+        <input type="submit" value="Create"> 
+        <p>{{success}}</p>
+        <p>Time Taken :{{time_taken}}</p>
+    </form>
+<br>
+ <form action="/fetch" method="post" enctype="multipart/form-data">
+  <input type="text" name="lat" placeholder="Enter latitude value">
+  <input type="text" name="lon" placeholder="Enter longitude value">
+ <input type="submit" value="Submit">
+ <table>
+ Row count: {{ count }}
+     {% for col in res %}
+     <tr>
+
+              <td>{{ col }}</td>
+
+     </tr>
+      {% endfor %}
+ </table>
+
+     </form>
+<br>
+<form action="/fetchmag" method="POST" enctype="multipart/form-data">
+<input type="text" name="magnitude" placeholder="Enter the magnitude value">
+<input type="text" name="magRange" placeholder="Enter the magnitude range">
+	<Strong>Magnitude of Selected Range</Strong>
+	<input type="submit" name ="result" value ="Result">
+	<table>
+<p>Totaltime : {{totaltime}}</p>
+ Row count: {{ counter0 }}
+     {% for col in mag %}
+     <tr>
+
+              <td>{{ col }}</td>
+
+     </tr>
+      {% endfor %}
+ </table>
+	
+</form>
+
+
+<hr>
+<form action="/rcache" method="post" enctype="multipart/form-data">
+ <input type="text" name="count" placeholder="Enter country code">
+ 
+<input type="submit" value="Submit">
+<p><b>Time taken: </b> {{total_time}} </p>
+<p><b>In rediscache: </b> {{foundm}} </p>
+<table>
+<b>Row count: </b>{{ counter }}
+    {% for col in resu %}
+    <tr>
+
+             <td>{{ col }}</td>
+
+    </tr>
+     {% endfor %}
+</table>
+
+    </form>
+    <hr>
+<form action="/random" method="post" enctype="multipart/form-data">
+ <input type="text" name="count" placeholder="Enter count">
+ 
+<input type="submit" value="Random Queries">
+<p><b>Time taken: </b> {{totaltimer}} </p>
+<table>
+<b>Row count: </b>{{ countr2 }}
+    {% for col in resu2 %}
+    <tr>
+
+             <td>{{ col }}</td>
+
+    </tr>
+     {% endfor %}
+</table>
+
+    </form>
+
+<hr>
+<form action="/innerjoin" method="post" enctype="multipart/form-data">
+<!-- <input type="text" name="count" placeholder="Enter count"> -->
+ 
+<input type="submit" value="Inner Queries">
+<p><b>Time taken: </b> {{itime}} </p>
+<table>
+<b>Row count: </b>{{ icount }}
+    {% for col in iresu %}
+    <tr>
+
+             <td>{{ col }}</td>
+
+    </tr>
+     {% endfor %}
+</table>
+
+    </form>
+
+</body>
+</html>
